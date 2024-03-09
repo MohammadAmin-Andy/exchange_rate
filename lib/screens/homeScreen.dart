@@ -1,4 +1,5 @@
 import 'package:exchange_rate/constans/constans.dart';
+import 'package:exchange_rate/loading/rate_loading.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -9,7 +10,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: darkGreyColor,
       appBar: AppBar(
-        backgroundColor: weakGreeenColor,
+        backgroundColor: weakGreenColor,
         centerTitle: true,
         title: Text(
           'نرخ سکه و ارز',
@@ -29,7 +30,7 @@ class HomeScreen extends StatelessWidget {
                 image: AssetImage('images/logo.png'),
               ),
               SizedBox(height: 40),
-              _getrateButten(),
+              _getrateButten(context),
               SizedBox(height: 8),
               _getcrypto()
             ],
@@ -39,19 +40,26 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _getrateButten() {
+  Widget _getrateButten(context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         backgroundColor: softGreenColor,
         minimumSize: Size(240, 50),
       ),
-      onPressed: () {},
+      onPressed: () {
+        // Navigator.push(
+        //   context,
+        //   MaterialPageRoute(
+        //     builder: ((context) => RateLoadingPage()),
+        //   ),
+        // );
+      },
       child: Text(
         'سکه و ارز',
         style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 20,
-            color: blachColor,
+            color: blackColor,
             fontFamily: 'Mh'),
       ),
     );
@@ -70,7 +78,7 @@ class HomeScreen extends StatelessWidget {
         style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 20,
-            color: blachColor,
+            color: blackColor,
             fontFamily: 'Mh'),
       ),
     );

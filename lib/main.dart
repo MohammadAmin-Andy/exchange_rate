@@ -1,3 +1,4 @@
+import 'package:exchange_rate/loading/rate_loading.dart';
 import 'package:exchange_rate/screens/homeScreen.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,7 @@ class Application extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: RateLoadingPage(),
     );
   }
 }
